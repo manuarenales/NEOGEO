@@ -1,0 +1,7 @@
+{
+  "name": "NewGeoDroid",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

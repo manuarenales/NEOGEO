@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> NEW - GEODROID </ion-title>
+    {{BlueEnable}}
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Bluetooth </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-button (click)="scan()"> SCAN </ion-button>
+  <ion-button (click)="conect()"> SCAN </ion-button>
+  <ion-button (click)="status()"> SCAN </ion-button>
+  <ion-list>
+    @for (device of deviceList ; track device.id) {
+    <ion-item>
+      <ion-label>{{device.id}}</ion-label>
+      <ion-label>{{device.name}}</ion-label>
+      <ion-label>{{device.address}}</ion-label>
+    </ion-item>
+    }
+  </ion-list>
+</ion-content>
