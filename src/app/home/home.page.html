@@ -12,8 +12,11 @@
     </ion-toolbar>
   </ion-header>
   <ion-button (click)="scan()"> SCAN </ion-button>
-  <ion-button (click)="conect()"> SCAN </ion-button>
-  <ion-button (click)="status()"> SCAN </ion-button>
+  <ion-button (click)="conectImpresora()"> Conectar Impresora </ion-button>
+  <ion-button (click)="conectModulo()"> Conectar Modulo </ion-button>
+  <ion-button (click)="status()"> STATUS </ion-button>
+  <ion-button (click)="postData()"> postData </ion-button>
+  <ion-button (click)="getData()"> getData </ion-button>
   <ion-list>
     @for (device of deviceList ; track device.id) {
     <ion-item>

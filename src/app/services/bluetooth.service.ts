@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BluetoothService {
+
   enabled: boolean = false;
   deviceConected !: DeviceBLC;
   deviceList: DeviceBLC[] = []
@@ -36,9 +37,22 @@ export class BluetoothService {
   }
 
   async connect(deviceID: string) {
-    BluetoothSerial.connect("68:AA:D2:0D:09:AE").subscribe((resp) => {
+
+    BluetoothSerial.connect(deviceID).subscribe((resp) => {
       console.log('Respuestas obtengo respuestas : ', resp)
     })
+  }
+
+  async postDataToImpresora() {
+    BluetoothSerial.write('Hola estoy vivo bujajajajaj ').then((result) => {
+      console.log('que pasa que pasa ', result)
+    });
+  }
+
+  async getData() {
+    BluetoothSerial.read().then((result) => {
+      console.log('resultado de lectura ', result)
+    });
   }
 
 }

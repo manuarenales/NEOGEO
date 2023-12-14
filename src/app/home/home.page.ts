@@ -35,7 +35,18 @@ export class HomePage implements OnInit {
       console.log(resp);
     });
   }
-  async conect() {
-    this.bluetoothService.connect('');
+  async conectImpresora() {
+    this.bluetoothService.connect('68:AA:D2:0D:09:AE');
+  }
+  async conectModulo() {
+    this.bluetoothService.connect('00:16:A4:03:FC:89');
+  }
+
+  async postData() {
+    this.bluetoothService.postDataToImpresora();
+  }
+
+  async getData() {
+    this.bluetoothService.getData();
   }
 }
